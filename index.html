@@ -1,85 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Creux La Nuit</title>
-  <style>
-    @font-face {
-      font-family: "Steradian";
-      src: url("fonts/Steradian-Lt.otf") format("opentype");
-      font-weight: 300;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Steradian";
-      src: url("fonts/Steradian-Rg.otf") format("opentype");
-      font-weight: 400;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Steradian";
-      src: url("fonts/steradian-bold.otf") format("opentype");
-      font-weight: 700;
-      font-display: swap;
-    }
+  <link rel="icon" type="image/x-icon" href="https://i.ibb.co/TMGz1vNn/Bigger-Logo.jpg">
+</head>
+<body>
+ 
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 
+  <style>
     body {
-      margin: 0 auto;
-      padding: 3rem 1.5rem;
-      max-width: 42rem;
-      font-family: "Steradian", Helvetica, Arial, sans-serif;
-      font-weight: 400;
+      font-family: 'DM Sans', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      min-height: 90vh;
       line-height: 1.6;
-      text-align: center;
-      color: #111;
-      background: #fff;
+      display: flex;
+      flex-direction: column;
     }
 
     h1 {
-      margin: 0 0 1rem;
       font-weight: 700;
-      font-size: 2.25rem;
     }
+   
+   main {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  justify-content: center;  
+  text-align: center;
+}
 
-    h2 {
-      margin: 3rem 0 0.5rem;
-      font-weight: 700;
-      font-size: 1.25rem;
-    }
+main a {
+  color: #fff !important;
+  text-decoration: none;
+}   
+   
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    h3 {
-      margin: 0 0 1.25rem;
-      font-weight: 400;
-      font-size: 1.1rem;
-    }
+.logo {
+  height: 33px;
+  width: auto;
+}
 
-    p { margin: 0 0 1rem; }
+.links {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.20rem;
+}
 
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin: 0 auto 1.25rem;
-    }
+.socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
 
-    .note {
-      margin-top: 3rem;
-      font-weight: 300;
-      font-size: 0.9rem;
-      color: #555;
-    }
+
+body {
+  background: #0c0c0c;
+  color: #fff;
+}
+
+
+nav a, .socials a {
+  color: #fff;
+  text-decoration: none;
+}
+    
   </style>
-</head>
+
+
+
 <body>
-  <h1>CREUX LA NUIT</h1>
-  <p>Creux La Nuit is a French House and electronic adjacent record label founded by Opierm in 2023, now co-owned by Luv4Loop & Inky as of 2026. The label has gained notoriety from fellow labels and artists such as OMEAC Records, Montaime, Don Yaya & more.</p>
 
-  <h2>UPCOMING RELEASE</h2>
-  <h3>Funkup! - Wanderlust (CLN075) - October 16</h3>
-  <img src="https://i.ibb.co/G4SQM6Gr/wander-proper.png" alt="Wanderlust cover art" width="342" height="342">
-  <h3><a href="https://wiseband.lnk.to/Funkup-WANDERLUST">Pre-save</a></h3>
+<nav class="top-nav">
+  <img src="https://i.ibb.co/mFRtwVX4/CLN-White-logo-cropped.png" alt="CLN Logo" class="logo">
+  <div class="links">
+    <b><a href="/index.html">HOME</a></b>
+    <b><a href="/about.html">ABOUT</a></b>
+    <b><a href="/contact.html">CONTACT</a></b>
+  </div>
+</nav>
 
-  <p class="note">(This website is a placeholder, Creux La Nuit's website is currently being worked on.)</p>
-</body>
-</html>
+
+<main>
+ <h2>NEWEST RELEASE</h2>
+  <img src="https://i.ibb.co/G4SQM6Gr/wander-proper.png" alt="Wanderlust" width="350" height="350">
+  <h3>Funkup! - Wanderlust</h3>
+  <h3><a href="https://wiseband.lnk.to/Funkup-WANDERLUST">LISTEN</a></h3>
+</main>
+
+
+
+
+
+
+<footer class="socials">
+  <small><a href="https://youtube.com/@creuxlanuit">Youtube</a></small>
+  <small><a href="https://soundcloud.com/creuxlanuit">SoundCloud</a></small>
+  <small><a href="https://www.beatport.com/label/creux-la-nuit/396231">Beatport</a></small>
+  <small><a href="http://creuxlanuit.bandcamp.com/">Bandcamp</a></small>
+</footer>
