@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Opierm</title>
+  <link rel="icon" type="image/x-icon" href="https://i.ibb.co/TMGz1vNn/Bigger-Logo.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #0c0c0c;
+      color: #fff;
+      margin: 0;
+      padding: 2rem;
+      min-height: 90vh;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-weight: 700;
+    }
+
+    a { color: #fff; text-decoration: none; }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo  { height: 33px; width: auto; }
+    .links { display: flex; gap: 1rem; font-size: 1.2rem; }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      max-width: 1000px;
+      width: 100%;
+      margin: 2rem auto;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .artist-text h1 {
+      font-size: 3rem;
+      margin: 0 0 1rem;
+      line-height: 1;
+    }
+
+    .artist-text p {
+      font-size: 1rem;
+      margin: 1;
+      text-align: left;
+    }
+
+    .artist-logo {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .artist-logo img {
+      width: 80%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    @media (max-width: 800px) {
+      main { grid-template-columns: 1fr; }
+      .artist-logo { order: -1; }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="top-nav">
+  <img src="https://i.ibb.co/mFRtwVX4/CLN-White-logo-cropped.png" alt="CLN Logo" class="logo">
+  <div class="links">
+    <b><a href="/index.html">HOME</a></b>
+    <b><a href="/about.html">ABOUT</a></b>
+    <b><a href="/artists.html">ARTISTS</a></b>
+    <b><a href="/releases.html">RELEASES</a></b>
+    <b><a href="/contact.html">CONTACT</a></b>
+  </div>
+</nav>
+
+<main>
+  <div class="artist-text">
+    <a href="/artists.html" class="back">BACK</a>
+    <h1>OPIERM</h1>
+    <p>Opierm is a music producer, DJ and founder of the label, he has been releasing music for over three years, debuting with his single “The French” in 2023, which is also the first release on the label.
+    Since then, he’s produced a plethora of singles, several bodies of work under various aliases alongside his own (such as BROKEN EMBRACES and always late) – with his most recent EP 'Number One' being named as one of the best releases of 2025 by the 'at the discotheque' blog - and his most recent release 'Asking Me' has garnered over 1,000 plays and has been remixed by Creux La Nuit artists dreamer eighty seven and Luv4Loop as Wèdro Pintré.
+    He has been championed by the likes of Grammy-award winning artist, singer and DJ Todd Edwards, MySpace era Disco legend Laberge and has also been featured on well-known promotion channel Real Love Music.</p>
+  </div>
+
+  <div class="artist-logo">
+    <img src="https://i.ibb.co/C3MWLfMr/Logo.png" alt="Opierm logo">
+  </div>
+</main>
+
+<footer class="socials">
+  <small><a href="https://youtube.com/@creuxlanuit">Youtube</a></small>
+  <small><a href="https://soundcloud.com/creuxlanuit">SoundCloud</a></small>
+  <small><a href="https://www.beatport.com/label/creux-la-nuit/396231">Beatport</a></small>
+  <small><a href="http://creuxlanuit.bandcamp.com/">Bandcamp</a></small>
+</footer>
+
+</body>
+</html>
