@@ -1,16 +1,19 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Creux La Nuit</title>
   <link rel="icon" type="image/x-icon" href="https://i.ibb.co/TMGz1vNn/Bigger-Logo.jpg">
-</head>
-<body>
- 
- <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 
   <style>
+    a {
+      color: #fff !important;
+      text-decoration: none;
+    }
+
     body {
       font-family: 'DM Sans', sans-serif;
       margin: 0;
@@ -19,94 +22,253 @@
       line-height: 1.6;
       display: flex;
       flex-direction: column;
+      color: #fff;
+      background: #0c0c0c;
     }
 
-    h1 {
+    .backgrounds,
+    .overlay {
+      position: fixed;
+      inset: 0;
+    }
+
+    .backgrounds {
+      z-index: -2;
+    }
+
+    .bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+
+    .bg.active {
+      opacity: 1;
+    }
+
+    .overlay {
+      z-index: -1;
+      background: linear-gradient(
+        to bottom,
+        rgba(12, 12, 12, 0.85) 0%,
+        rgba(12, 12, 12, 0.40) 35%,
+        rgba(12, 12, 12, 0.40) 65%,
+        rgba(12, 12, 12, 0.90) 100%
+      );
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      min-width: 0;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      height: 33px;
+      width: auto;
+    }
+
+    .links {
+      display: flex;
+      gap: 1rem;
+      font-size: 1.20rem;
+    }
+
+    .socials {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      display: grid;
+    }
+
+    .track {
+      display: contents;
+    }
+
+    .slide {
+      grid-area: 1 / 1;
+      box-sizing: border-box;
+      padding-left: 4rem;
+      text-align: left;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1.2s ease, visibility 0s linear 1.2s;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 1.2s ease, visibility 0s;
+    }
+
+.indicators {
+  display: flex;
+  gap: 0.5rem;
+  padding-left: 4rem;
+  margin-top: 3.5rem;
+}
+
+.indicators button {
+  width: 4.5rem;
+  height: 4px;
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+}
+
+    .indicators button:hover {
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .indicators button.active {
+      background: #fff;
+    }
+
+    .label {
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin: 0;
+    }
+
+    .artist {
+      font-size: clamp(3rem, 9vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1;
+      margin: 0.2rem 0;
+    }
+
+    .title {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin: 0 0 1rem 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 0.6rem 1.4rem;
+      border-radius: 12px;
       font-weight: 700;
+      font-size: 1rem;
     }
-   
-   main {
-  flex: 1; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;   
-  justify-content: center;  
-  text-align: center;
-}
-
-main a {
-  color: #fff !important;
-  text-decoration: none;
-}   
-   
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  height: 33px;
-  width: auto;
-}
-
-.links {
-  display: flex;
-  gap: 1rem;
-  font-size: 1.20rem;
-}
-
-.socials {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-
-body {
-  background: #0c0c0c;
-  color: #fff;
-}
-
-
-nav a, .socials a {
-  color: #fff;
-  text-decoration: none;
-}
-    
   </style>
-
-
+</head>
 
 <body>
 
+<div class="backgrounds">
+  <div class="bg" style="background-image: url('https://i.ibb.co/zT4rPXnq/cather.png');"></div>
+  <div class="bg" style="background-image: url('https://i.ibb.co/Rphq9RjG/wanderlust.png');"></div>
+  <div class="bg" style="background-image: url('https://i.ibb.co/Mymr6J54/Run-Free.png');"></div>
+</div>
+<div class="overlay"></div>
+
 <nav class="top-nav">
-  <img src="logo.png" alt="CLN Logo" class="logo">
+  <img src="https://i.ibb.co/mFRtwVX4/CLN-White-logo-cropped.png" alt="CLN Logo" class="logo">
   <div class="links">
     <b><a href="/index.html">HOME</a></b>
     <b><a href="/about.html">ABOUT</a></b>
+    <b><a href="/artists.html">ARTISTS</a></b>
+    <b><a href="/releases.html">RELEASES</a></b>
     <b><a href="/contact.html">CONTACT</a></b>
   </div>
 </nav>
 
-
 <main>
- <h2>NEWEST RELEASE</h2>
-  <img src="https://i.ibb.co/G4SQM6Gr/wander-proper.png" alt="Wanderlust" width="350" height="350">
-  <h3>Funkup! - Wanderlust</h3>
-  <h3><a href="https://wiseband.lnk.to/Funkup-WANDERLUST">LISTEN</a></h3>
+  <div class="slider">
+    <div class="track" id="track">
+
+      <section class="slide">
+        <p class="label">UPCOMING RELEASE</p>
+        <h1 class="artist">KREUZEN</h1>
+        <h2 class="title">CATHETER EP</h2>
+        <a class="btn" href="https://wiseband.lnk.to/KREUZEN-CATHETER-EP">PRE-SAVE</a>
+      </section>
+
+      <section class="slide">
+        <p class="label">NEWEST RELEASE</p>
+        <h1 class="artist">FUNKUP!</h1>
+        <h2 class="title">WANDERLUST</h2>
+        <a class="btn" href="https://wiseband.lnk.to/Funkup-WANDERLUST">LISTEN</a>
+      </section>
+
+      <section class="slide">
+        <p class="label">PREVIOUS RELEASE</p>
+        <h1 class="artist">REVOLUTION</h1>
+        <h2 class="title">RUN FREE</h2>
+        <a class="btn" href="https://wiseband.lnk.to/REVOLUTION-Run-Free">LISTEN</a>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="indicators" id="indicators">
+    <button aria-label="Slide 1"></button>
+    <button aria-label="Slide 2"></button>
+    <button aria-label="Slide 3"></button>
+  </div>
 </main>
-
-
-
-
-
 
 <footer class="socials">
   <small><a href="https://youtube.com/@creuxlanuit">Youtube</a></small>
   <small><a href="https://soundcloud.com/creuxlanuit">SoundCloud</a></small>
   <small><a href="https://www.beatport.com/label/creux-la-nuit/396231">Beatport</a></small>
-  <small><a href="https://creuxlanuit.bandcamp.com/">Bandcamp</a></small>
-  <small><a href="https://instagram.com/creuxlanuit">Instagram</a></small>
-  <small><a href="https://discord.gg/3cq4XyrtxJ">Discord</a></small>
+  <small><a href="http://creuxlanuit.bandcamp.com/">Bandcamp</a></small>
 </footer>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const bgs    = document.querySelectorAll('.bg');
+  const dots   = document.querySelectorAll('#indicators button');
+
+  const INTERVAL = 6000;
+  let current = 0;
+  let timer;
+
+  function goTo(i) {
+    current = (i + slides.length) % slides.length;
+
+    slides.forEach((el, n) => el.classList.toggle('active', n === current));
+    bgs.forEach((el, n)    => el.classList.toggle('active', n === current));
+    dots.forEach((el, n)   => el.classList.toggle('active', n === current));
+  }
+
+  function start() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), INTERVAL);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      goTo(i);
+      start();
+    });
+  });
+
+  goTo(0);
+  start();
+</script>
+
+</body>
+</html>
